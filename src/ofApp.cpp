@@ -24,7 +24,7 @@ void board::boardDrawer ()
             ofRect(i*(squareSize+5),ii*(squareSize+5),squareSize,squareSize);
         }
     }
- }
+ }//Hello
  void board::tileSetup ()
  {ofSeedRandom();
     for(size_t i = 0; i < N; ++i)
