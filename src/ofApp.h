@@ -1,8 +1,30 @@
 #pragma once
 #include "ofMain.h"
+#include "ofxSpriteSheetRenderer.h" //Important sprite addon
+
+
 
 typedef vector< vector<int> > Matrix;
 typedef vector<int> Row;
+
+//Sprite animation declaration(although this is a single frame)
+static animation_t walkAnimation =
+{	0,	/* index		*/
+	0,	/* frame		*/
+	1,	/* totalframes	*/
+	1,	/* width		*/
+	1,	/* height		*/
+	75,	/* frameduration*/
+	0,	/* nexttick		*/
+	-1,	/* loops		*/
+	-1,	/* finalindex	*/
+	1	/* frameskip	*/
+};
+
+struct dTileSprite {
+	animation_t animation;
+	ofPoint pos;
+};
 
 class Enemy
 {
@@ -58,6 +80,9 @@ public:
 
     player player1;
     statbar statbar1;
+    
+    ofxSpriteSheetRenderer * spriteRenderer;
+	vector<dTileSprite> sprites; //The sprite vector
 };
 class Enemies
 {
